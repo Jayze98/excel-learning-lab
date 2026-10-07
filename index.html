@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Excel Learning Lab | Scrap Analytics</title>
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!-- ============ PASSWORD GATE ============ -->
+<div id="gate" class="screen-center">
+  <form class="gate-card" id="gateForm" autocomplete="off">
+    <div class="brand-slot"><img class="mark-logo" src="img/logo.png" alt="Scrap Analytics"></div>
+    <div class="gate-bars" aria-hidden="true"><span style="height:35%;animation-delay:.05s"></span><span style="height:55%;animation-delay:.12s"></span><span style="height:45%;animation-delay:.19s"></span><span style="height:75%;animation-delay:.26s"></span><span style="height:62%;animation-delay:.33s"></span><span style="height:92%;animation-delay:.4s"></span><span style="height:100%;animation-delay:.47s"></span></div>
+    <div>
+      <p class="eyebrow">Scrap Analytics · 30-day self-learning course</p>
+      <h1>Learn Excel, one day at a time</h1>
+    </div>
+    <div class="field">
+      <label for="pw">Course password</label>
+      <div class="pw-row">
+        <input id="pw" type="password" placeholder="Enter the password from your trainer" required>
+        <button type="button" class="pw-toggle" id="pwToggle">Show</button>
+      </div>
+      <div class="err" id="pwErr" role="alert"></div>
+    </div>
+    <button class="btn btn-primary" type="submit">Unlock course</button>
+    <p class="hint">Don't have the password? Ask your trainer.</p>
+  </form>
+</div>
+
+<!-- ============ STUDENT ACCOUNT PICK / CREATE ============ -->
+<div id="setup" class="screen-center" hidden>
+  <div class="gate-card">
+    <div class="brand-slot"><img class="mark-logo" src="img/logo.png" alt="Scrap Analytics"></div>
+    <div id="pickWrap" class="stack" hidden>
+      <h1 style="font-size:1.4rem">Who's learning today?</h1>
+      <div class="profile-list" id="profileList"></div>
+      <div class="divider">or</div>
+    </div>
+    <form id="newForm" class="stack" autocomplete="off">
+      <div>
+        <p class="eyebrow">Create your student account</p>
+        <h1 style="font-size:1.4rem">Your scores will be saved here</h1>
+      </div>
+      <div class="field"><label for="fName">Full name</label><input id="fName" required maxlength="60" placeholder="e.g. Riya Sharma"></div>
+      <div class="field"><label for="fClass">Class / Grade</label><input id="fClass" maxlength="30" placeholder="e.g. Grade 9"></div>
+      <div class="field"><label for="fRoll">Roll number or student ID</label><input id="fRoll" maxlength="30" placeholder="e.g. 23"></div>
+      <div class="field"><label for="fSchool">School or batch</label><input id="fSchool" maxlength="60" placeholder="e.g. Saturday batch"></div>
+      <button class="btn btn-primary" type="submit">Create account &amp; start</button>
+      <p class="hint">Your account and results are saved in this browser on this device.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" hidden>
+  <header class="topbar">
+    <div class="topbar-in">
+      <div class="brand-slot"><img class="mark-logo" src="img/logo.png" alt="Scrap Analytics"></div>
+      <nav class="nav" aria-label="Main">
+        <button data-view="home">Home</button>
+        <button data-view="lesson">Lessons</button>
+        <button data-view="account">My Account</button>
+      </nav>
+      <div class="who">
+        <span class="avatar" id="whoAvatar"></span>
+        <button class="icon-btn" id="lockBtn" title="Lock the course">Lock</button>
+      </div>
+    </div>
+  </header>
+  <main id="view"></main>
+  <footer class="foot">Course content is based on the <i>Microsoft Excel Handbook</i> (Dr. MCR HRD Institute of Telangana) and updated with current Microsoft Support documentation. Excel is a trademark of Microsoft; this learning tool is independent of Microsoft.</footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/logo.js"></script>
+<script src="js/content.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/diagrams.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
